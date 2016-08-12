@@ -44,33 +44,35 @@
 
 
 # CubeMove Script:
-
-	using UnityEngine;
-	using System.Collections;
+```
+using UnityEngine;
+using System.Collections;
 	
-	public class CubeMove : MonoBehaviour {
-		public float speed = .5f;
+public class CubeMove : MonoBehaviour {
+	public float speed = .5f;
 	
-		// Use this for initialization
-		void Start () {	
-		}
-		//Update is called once per frame
-		void Update () {
-
-		if(Input.GetKey(KeyCode.W)){
-			transform.position += new Vector3 (0, 0, speed);
-		}
-		if(Input.GetKey(KeyCode.S)){
-			transform.position += new Vector3 (0, 0, -speed);
-		}
-		if(Input.GetKey(KeyCode.A)){
-			transform.position += new Vector3 (-speed, 0, 0);
-		}
-		if(Input.GetKey(KeyCode.D)){
-			transform.position += new Vector3 (speed, 0, 0);
-			}
-		}
+	// Use this for initialization
+	void Start () {	
 	}
+	//Update is called once per frame
+	void Update () {
+
+	    if(Input.GetKey(KeyCode.W)){
+			    transform.position += new Vector3 (0, 0, speed);
+		  }
+		  if(Input.GetKey(KeyCode.S)){
+			    transform.position += new Vector3 (0, 0, -speed);
+		  }
+		  if(Input.GetKey(KeyCode.A)){
+			    transform.position += new Vector3 (-speed, 0, 0);
+		  }
+		  if(Input.GetKey(KeyCode.D)){
+			    transform.position += new Vector3 (speed, 0, 0);
+		  }
+	}
+}
+```
+
 ## Week 2: May 28 - May 29
 - Introductions to Standard assets (e.g. Materials, Scripts)
 - Basic scripting
@@ -90,27 +92,29 @@
 
 # Enemy Script
 
-	using UnityEngine;
-	using System.Collections;
-	using UnityEngine.UI;
+```
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 	
-	public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour {
 	
-	// Use this for initialization
-	void Start () {
+	  // Use this for initialization
+	  void Start () {
 	
-	}
+	  }
 	
-	// Update is called once per frame
-	void Update () {
-				}
-	
-	void OnTriggerEnter(Collider obj){
-		CubeMove.lives -= 1;
-		Destroy (obj.gameObject);
-		Application.LoadLevel(0);
+	  // Update is called once per frame
+	  void Update () {
 		}
-	}
+	
+	  void OnTriggerEnter(Collider obj){
+		    CubeMove.lives -= 1;
+		    Destroy (obj.gameObject);
+		    Application.LoadLevel(0);
+		}
+}
+```
 
 
 
@@ -118,28 +122,28 @@
 
 # DangerZone Script
 
-	using UnityEngine;
-	using System.Collections;
-	using UnityEngine.UI;
+```
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 	
-	public class DangerZone : MonoBehaviour {
+public class DangerZone : MonoBehaviour {
 
-    	// Use this for initialization
-    	void Start () {
+    // Use this for initialization
+    void Start () {
+    }
 
-    	}
+    // Update is called once per frame
+    void Update () {
+    }
 
-    	// Update is called once per frame
-    	void Update () {
-    	}
-
-    	void OnTriggerEnter(Collider obj){
+    void OnTriggerEnter(Collider obj){
         if (obj.tag == "player") {
-            Destroy (obj.gameObject);
-        	}
-    	}
-	}
-
+           Destroy (obj.gameObject);
+        }
+    }
+}
+```
 
 
 
@@ -186,33 +190,34 @@
 
 # CubeMove C# Script
 
-	using UnityEngine;
-	using System.Collections;
+```
+using UnityEngine;
+using System.Collections;
 
-	public class CubeMove : MonoBehaviour {
-	public float speed = .5f;
-	// Use this for initialization
-	void Start () {
+public class CubeMove : MonoBehaviour {
+	  public float speed = .5f;
+  	// Use this for initialization
+	  void Start () {
+	  }
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	  // Update is called once per frame
+	  void Update () {
 
-		if(Input.GetKey(KeyCode.W)){
-			transform.position += new Vector3 (0, 0, speed);
+		    if(Input.GetKey(KeyCode.W)){
+			      transform.position += new Vector3 (0, 0, speed);
+		    }
+		    if(Input.GetKey(KeyCode.S)){
+			      transform.position += new Vector3 (0, 0, -speed);
+		    }
+		    if(Input.GetKey(KeyCode.A)){
+			      transform.position += new Vector3 (-speed, 0, 0);
+		    }
+		    if(Input.GetKey(KeyCode.D)){
+			      transform.position += new Vector3 (speed, 0, 0);
+			  }
 		}
-		if(Input.GetKey(KeyCode.S)){
-			transform.position += new Vector3 (0, 0, -speed);
-		}
-		if(Input.GetKey(KeyCode.A)){
-			transform.position += new Vector3 (-speed, 0, 0);
-		}
-		if(Input.GetKey(KeyCode.D)){
-			transform.position += new Vector3 (speed, 0, 0);
-			}
-		}
-	}
+}
+```
 
 
 
@@ -221,54 +226,54 @@
 
 # Enemy C# script
 
-	using UnityEngine;
-	using System.Collections;
-	using UnityEngine.UI;
+```
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 
-	public class Enemy : MonoBehaviour {
-	public Text text;
-	// Use this for initialization
-	void Start () {
-	}
+public class Enemy : MonoBehaviour {
+    public Text text;
+	  // Use this for initialization
+	  void Start () {
+	  }
 	
-	// Update is called once per frame
-	void Update () {
-		if (CubeMove.lives == 0) {
-			text.enabled = true;
+	  // Update is called once per frame
+	  void Update () {
+		    if (CubeMove.lives == 0) {
+			      text.enabled = true;
+		    }
+	  }
+	  void OnTriggerEnter(Collider obj){
+		    CubeMove.lives -= 1;
+		    Destroy (obj.gameObject);
+		    Application.LoadLevel(0);
 		}
-	}
-	void OnTriggerEnter(Collider obj){
-		CubeMove.lives -= 1;
-		Destroy (obj.gameObject);
-		Application.LoadLevel(0);
-		}
-	}
+}
+```
 
 #WinZone C# script
 
-	using UnityEngine;
-	using System.Collections;
+```
+using UnityEngine;
+using System.Collections;
 
-	public class WinZone : MonoBehaviour {
+public class WinZone : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+	  void Start () {
+	  }
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	  // Update is called once per frame
+	  void Update () {
+	  }
 
-	void OnTriggerEnter(Collider obj){
-		Destroy (obj.gameObject);
+	  void OnTriggerEnter(Collider obj){
+		    Destroy (obj.gameObject);
 		}
-	}
+}
+```
 
 
-
-
 ## Week 3: June 25
 - Review from last week
 - Update CubeMove and Enemy scripts by adding variables speed and lives
@@ -281,57 +286,63 @@
 
 # Updated CubeMove Script
 
-	using UnityEngine;
-	using System.Collections;
+```
+using UnityEngine;
+using System.Collections;
 
-	public class CubeMove : MonoBehaviour {
-	public float speed = .5f;
-	public static int lives=3;
-	// Use this for initialization
-	void Start () {
+public class CubeMove : MonoBehaviour {
+	  public float speed = .5f;
+	  public static int lives=3;
+	  // Use this for initialization
+	  void Start () {
+    }
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	  // Update is called once per frame
+	  void Update () {
 
-		if(Input.GetKey(KeyCode.W)){
-			transform.position += new Vector3 (0, 0, speed);
+    		if(Input.GetKey(KeyCode.W)){
+			      transform.position += new Vector3 (0, 0, speed);
+		    }
+		    if(Input.GetKey(KeyCode.S)){
+			      transform.position += new Vector3 (0, 0, -speed);
+		    }
+		    if(Input.GetKey(KeyCode.A)){
+			      transform.position += new Vector3 (-speed, 0, 0);
+		    }
+		    if(Input.GetKey(KeyCode.D)){
+			      transform.position += new Vector3 (speed, 0, 0);
+			  }
 		}
-		if(Input.GetKey(KeyCode.S)){
-			transform.position += new Vector3 (0, 0, -speed);
-		}
-		if(Input.GetKey(KeyCode.A)){
-			transform.position += new Vector3 (-speed, 0, 0);
-		}
-		if(Input.GetKey(KeyCode.D)){
-			transform.position += new Vector3 (speed, 0, 0);
-			}
-		}
-	}
+}
+```
 
 (Using the variable Speed it’s able to change the speed of the controls. Lives is also created to keep track of how many lives are in the game at that moment.)
 
 # Lives Script for Enemy Script
 
-	using UnityEngine;
-	using System.Collections;
+```
+using UnityEngine;
+using System.Collections;
 
-	public class CubeMove : MonoBehavior {
-	public float speed = .5f;
-	public static int lives=3;
+public class CubeMove : MonoBehavior {
+	  public float speed = .5f;
+	  public static int lives=3;
   	// Use this for initialization 
-	void Start (){
-	}
+	  void Start (){
+	  }
+```
 
 (The 5th line tells it to subtract one from the variable lives when the player collides with the enemy)
 
-      	void Update () {
-	}
-        void OnTriggerEnter(Collider obj){
-               Destroy (obj.gameObject);
-               Application.LoadLevel("Game");
-	}
+```
+    void Update () {
+	  }
+    void OnTriggerEnter(Collider obj){
+        Destroy (obj.gameObject);
+        Application.LoadLevel("Game");
+	  }
+}
+```
 	
 (This belongs on the Enemy script and makes it reset the level when you touch (collide) the player object with the enemy object.)
 
@@ -354,39 +365,41 @@
 
 # AIController Script:
 ```
-	using UnityEngine;
-	using System.Collections;
+using UnityEngine;
+using System.Collections;
 
-  	public class AIController : MonoBehaviour {
-	public float speed = 2.0f;
+public class AIController : MonoBehaviour {
+	  public float speed = 2.0f;
 		// Use this for initialization
 		void Start () {
 		}
 		// Update is called once per frame
 		void Update () {
 		     transform.Translate (Vector3.forward * Time.deltaTime * speed);
-	  	}
-	}
+	  }
+}
 ```	
 # WallController Script:
 
-	using UnityEngine;
-	using System.Collections;
+```
+using UnityEngine;
+using System.Collections;
 
-	public class WallController : MonoBehaviour {
-	// Use this for initialization
-	void Start () {
-	}
-	// Update is called once per frame
-	void Update () {
-	}
-	void OnTriggerEnter(Collider obj) {
-		if (obj.tag == "AI") {
-			transform.Rotate (new Vector3 (0, 180, 0));
-			transform.Rotate (new Vector3 (0, 45, 0));
-			}
-		}
-	}
+public class WallController : MonoBehaviour {
+	  // Use this for initialization
+	  void Start () {
+	  }
+	  // Update is called once per frame
+	  void Update () {
+	  }
+	  void OnTriggerEnter(Collider obj) {
+		    if (obj.tag == "AI") {
+			      transform.Rotate (new Vector3 (0, 180, 0));
+			      transform.Rotate (new Vector3 (0, 45, 0));
+		    }
+    }
+}
+```
 
 # Week 6: July 23 
 - Based on a set of rules: the students completed a game that was required to have:
